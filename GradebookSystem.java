@@ -147,7 +147,7 @@ public class GradebookSystem {
     /**
      * Adds a new category to the active class.
      * * @param name   The name of the category (e.g., "Homework").
-     * @param weight The weight of the category (e.g., 0.4 for 40%).
+     * @param weight The weight of the category.
      */
     public void addCategory(String name, double weight) {
         if (currentClassId == null) { System.out.println("Error: No class selected."); return; }
@@ -302,7 +302,6 @@ public class GradebookSystem {
 
     /**
      * Displays the gradebook with weighted averages calculated in SQL.
-     * * <p>This method has been updated to scale weights to 100.</p>
      */
     public void showGradebook() {
         if (currentClassId == null) { System.out.println("Error: No class selected."); return; }
@@ -348,7 +347,6 @@ public class GradebookSystem {
 
     /**
      * Shows detailed grades for a specific student.
-     * Updated to show subtotals per category and attempted vs total grades.
      * * @param username The username of the student.
      */
     public void showStudentGrades(String username) {
@@ -448,7 +446,7 @@ public class GradebookSystem {
                 }
             }
             
-            // Normalize Attempted Grade (e.g., if they only attempted 50% of the class, scale that 50% to 100%)
+            // Normalize Attempted Grade 
             if (totalWeightAttempted > 0) {
                 finalAttemptedGrade = (finalAttemptedGrade / totalWeightAttempted) * 100;
             }
@@ -479,4 +477,5 @@ public class GradebookSystem {
         System.out.printf("  >> Subtotal for %s: %.1f / %.1f (%.1f%%)\n", name, earned, max, percentage * 100);
         System.out.printf("  >> Contribution to final grade: %.2f / %.2f\n", contribution, effectiveWeight);
     }
+
 }
