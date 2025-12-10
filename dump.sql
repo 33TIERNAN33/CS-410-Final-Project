@@ -1,4 +1,4 @@
-USE gradebook; -- Ensure this matches your actual database name
+USE gradebook; 
 
 -- 1. Disable safety checks to allow bulk deletion
 SET SQL_SAFE_UPDATES = 0;
