@@ -8,14 +8,21 @@ import java.sql.SQLException;
  */
 public class DB {
     
-    // The address of the database (localhost means this computer)
-    private static final String URL = "jdbc:mysql://localhost:3306/gradebook";
-    
-    // The username for the MySQL database
-    private static final String USER = "root";
-    
-    // The password for the MySQL database
-    private static final String PASS = "1234"; 
+    // Port from deploydb.sh output
+    private static final String PORT = "57737";
+
+    // Database name created on Onyx
+    private static final String DB_NAME = "gradebook";
+
+    // JDBC URL for the Onyx sandbox.
+    // useSSL/verifyServerCertificate settings according to the given guide in the instructions
+    private static final String URL = "jdbc:mysql://localhost:" + PORT + "/" + DB_NAME + "?useSSL=true&verifyServerCertificate=false";
+
+    // Sandbox username
+    private static final String USER = "msandbox";
+
+    // Sandbox password chosen when running deploydb.sh
+    private static final String PASS = "password";
 
     /**
      * This method establishes a connection to the database.
