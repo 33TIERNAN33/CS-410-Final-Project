@@ -7,20 +7,18 @@
 
 ## Overview
 
-Concisely explain what the program does. If this exceeds a couple of
-sentences, you're going too far. Generally you should be pulling this
-right from the project specification. Please don't just cut and
-paste, but paraphrase what is stated in the project specification.
+For this project, we built a Gradebook Management System using Java and MySQL. 
+The goal was to create a program where an instructor can manage their classes, add students, creating assignments, and enter grades. 
+The most important feature is that the system automatically calculates the final weighted grades (like 40% Homework, 60% Exam) 
+using SQL queries, rather than doing the math in Java..
 
 ## Reflection
 
-Write a brief (2-3 paragraph) reflection describing your experience with this 
-project. Answer the following questions (but feel free to add other insights): 
-- What worked well and what was a struggle?
-- What concepts still aren't quite clear?
-- What techniques did you use to make your code easy to debug and modify?
-- What would you change about your design process?
-- If you could go back in time, what would you tell yourself about doing this project?
+Overall, this project was a really good way to see how Java connects to a real database. 
+What worked well for us was deciding to put all the database connection code into a separate file (DB.java). 
+This kept our main code clean and made it much easier to focus on the logic without seeing connection strings everywhere. 
+However, it was a struggle to get the weighted grade calculations right in SQL. Writing a single query to join four different tables 
+and calculate the weights correctly took us a long time and a lot of trial and error.
 
 ## Compiling and Using
 
